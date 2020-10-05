@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.lamp {
+    top: 40px;
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.lamp__bulb {
+    width: 400px;
+    height: 15px;
+    border-radius: 50px;
+    background: linear-gradient(#404040, #8d8d8d, white);
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+    transform: rotate(-10deg);
+}
+
+.lamp__stem {
+    height: 300px;
+    width: 15px;
+    background: linear-gradient(0.25turn, gray, white);
+    position: absolute;
+    top: 50px;
+    border-radius: 30px;
+    left: 50px;
+}
+
+.lamp__basis {
+    width: 200px;
+    height: 25px;
+    background: linear-gradient(white, gray);
+    position: absolute;
+    bottom: 30px;
+    border-radius: 20px;
+    left: 20px;
+    visibility: visible;
+}
+
+.lamp__light {
+    position: absolute;
+    top: 20px;
+    left: -88px;
+    opacity: 0.3;
+    width: 650px;
+    height: 410px;
+    background-image: linear-gradient(white, rgba(255, 255, 255, 0));
+    visibility: visible;
+    transform: rotate(-10deg);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=1);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    -o-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    -moz-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.control__brightness button {
+    background-color: #4CAF50;
+    border: 1px solid green;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left;
+}
+
+.control__brightness:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.control__brightness button:hover {
+    background-color: #3e8e41;
+}
+
+.control__button--red button {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 50px;
+    border: 1px solid #D25068;
+    background: #D25068 linear-gradient(to bottom, #F66C7B, #D25068);
+    border-radius: 50%;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+    cursor: pointer;
+}
+
+.control__button--red button:active {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
+    top: 5px;
+}
+
+.control__button--red button:active::before {
+    top: -11px;
+    bottom: -5px;
+    content: "";
+}
+
+.control__switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+}
+
+.control__switch #checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.control__switch__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.control__switch__slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+#checkbox:checked + .control__switch__slider {
+    background-color: #2196F3;
+}
+
+#checkbox:checked + .control__switch__slider:before {
+    transform: translateX(66px);
+}
+
+.container {
+    width: 100%;
+    height: 420px;
+    background: #98dfe5;
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+.control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
